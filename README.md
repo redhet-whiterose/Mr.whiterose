@@ -85,6 +85,9 @@ dev</code></pre>
 
   <hr>
 
+  <h2>📌 Social Media</h2>
+  https://www.instagram.com/whiterose.jpeg
+
   <h2>👨‍💻 Author</h2>
   <p><strong>whiterose</strong><br>
   Bug Bounty Hunter | Red Teamer | CTF Player</p>
