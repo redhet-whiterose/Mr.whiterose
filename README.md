@@ -94,8 +94,8 @@ dev</code></pre>
   <hr>
 
   <h2>👨‍💻 Author</h2>
-  <p><strong>Tay</strong><br>
-  Ethical Hacker | Red Teamer | CTF Player</p>
+  <p><strong>whiterose</strong><br>
+  Bug Bounty Hunter | Red Teamer | CTF Player</p>
 
 </body>
 </html>
