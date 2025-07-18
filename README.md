@@ -1,60 +1,139 @@
-# Mr.whiterose
-The tool is fully automated, real-time interactive, and optimized for bug bounty, CTF, and red team reconnaissance scenarios. It uses a modular architecture with clean CLI outputs powered by the rich library.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FuzzCollector v2.1 - Web Vulnerability Scanner</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f1117;
+      color: #e5e5e5;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #f43f5e;
+    }
+    code, pre {
+      background-color: #1a1c22;
+      padding: 10px;
+      border-radius: 6px;
+      display: block;
+      color: #38bdf8;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    table, th, td {
+      border: 1px solid #333;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      background-color: #1f1f1f;
+    }
+    .note {
+      color: #facc15;
+    }
+    hr {
+      border-color: #333;
+    }
+  </style>
+</head>
+<body>
 
-# 🚨 FuzzCollector v2.1 — XSS & HTML Injection Vulnerability Scanner
+  <h1>🚨 FuzzCollector v2.1</h1>
+  <p>A Python-based CLI tool to discover <strong>reflected XSS</strong> and <strong>HTML injection</strong> vulnerabilities by fuzzing subdomains and pulling archived endpoints from the Wayback Machine.</p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/python-3.6%2B-blue" />
-  <img src="https://img.shields.io/badge/status-active-success" />
-  <img src="https://img.shields.io/badge/UI-rich-brightgreen" />
-</p>
+  <hr>
 
----
+  <h2>📦 Installation</h2>
 
-## 🧠 About
+  <h3>1. Clone the tool</h3>
+  <pre><code>git clone https://github.com/yourname/fuzzcollector
+cd fuzzcollector</code></pre>
 
-**FuzzCollector** is an all-in-one subdomain recon and web vulnerability scanner focused on discovering:
+  <h3>2. Install Python dependencies</h3>
+  <pre><code>pip install -r requirements.txt</code></pre>
 
-- 🔍 **Live subdomains** (via wordlist fuzzing)
-- 🛰️ **Historical endpoints** (via Wayback Machine)
-- 💉 **Reflected XSS** vulnerabilities
-- 🧬 **HTML injection** points (custom HTML tag injections)
+  <h3>3. (Optional) Use setup script</h3>
+  <pre><code>chmod +x install.sh
+./install.sh</code></pre>
 
-All vulnerabilities are detected **live** and shown in a beautiful `rich`-powered terminal interface — and saved to log files for later triage.
+  <hr>
 
----
+  <h2>🚀 Usage</h2>
 
-## 🚀 Features
+  <pre><code>python3 redhet.py target.com</code></pre>
 
-✅ Fast subdomain discovery  
-✅ Wayback Machine endpoint harvesting  
-✅ Parameterized URL filtering  
-✅ Reflected XSS detection  
-✅ HTML injection detection  
-✅ Custom payloads  
-✅ Beautiful terminal UI (`rich`)  
-✅ Clean Ctrl+C exit  
-✅ Saves results to output folder  
+  <p>📌 Example:</p>
+  <pre><code>python3 redhet.py testphp.vulnweb.com</code></pre>
 
----
+  <hr>
 
-## 📸 Demo
+  <h2>📝 Wordlist Format (<code>subs.txt</code>)</h2>
+  <pre><code>www
+admin
+api
+mail
+portal
+test
+dev</code></pre>
 
-```bash
-┌──────────────────────────────┐
-│ FuzzCollector v2.1 🧪        │
-│ Target: testphp.vulnweb.com │
-└──────────────────────────────┘
+  <hr>
 
-🔍 Fuzzing subdomains...
-[+] Alive: admin.testphp.vulnweb.com
+  <h2>📂 Output Files</h2>
+  <p>All results are saved in the <code>output/</code> directory:</p>
+  <table>
+    <thead>
+      <tr><th>File</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>livesubdomains.txt</td><td>Alive subdomains</td></tr>
+      <tr><td>endpoints.txt</td><td>URLs pulled from Wayback Machine</td></tr>
+      <tr><td>xss_html_results.txt</td><td>Detected XSS and HTML injection URLs</td></tr>
+    </tbody>
+  </table>
 
-🛰️ Collecting endpoints...
-[+] Found 31 URLs from Wayback
+  <hr>
 
-💉 Scanning for XSS & HTMLi...
+  <h2>💉 Payloads Used</h2>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Payload</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>XSS</td><td><code>&lt;script&gt;alert(1337)&lt;/script&gt;</code></td></tr>
+      <tr><td>HTML</td><td><code>&lt;/a&gt;&lt;a href="https://bing.com"&gt;click&lt;/a&gt;</code></td></tr>
+    </tbody>
+  </table>
+  <p>All payloads are injected into every query parameter of discovered URLs.</p>
 
-[XSS] found:  https://target.com/page?id=<script>alert(1337)</script>
-[HTML] found: https://target.com/page?x=</a><a href="https://bing.com">click</a>
+  <hr>
 
-✔ Results saved to: output/xss_html_results.txt
+  <h2>📌 Requirements</h2>
+
+  <h3>Install required Python libraries:</h3>
+  <pre><code>pip install requests==2.31.0 rich==13.7.1 urllib3==2.2.1</code></pre>
+
+  <h3>Ensure curl is available:</h3>
+  <pre><code>sudo apt install curl -y</code></pre>
+
+  <hr>
+
+  <h2>⚠️ Legal Disclaimer</h2>
+  <p>This tool is intended <strong>only</strong> for educational purposes and authorized security testing. <br>
+  Do <strong>NOT</strong> scan or attack any system you do not own or have explicit permission to test.</p>
+
+  <hr>
+
+  <h2>👨‍💻 Author</h2>
+  <p><strong>Tay</strong><br>
+  Ethical Hacker | Red Teamer | CTF Player</p>
+
+</body>
+</html>
