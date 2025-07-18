@@ -1,50 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>FuzzCollector v2.1 - Web Vulnerability Scanner</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f1117;
-      color: #e5e5e5;
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2, h3 {
-      color: #f43f5e;
-    }
-    code, pre {
-      background-color: #1a1c22;
-      padding: 10px;
-      border-radius: 6px;
-      display: block;
-      color: #38bdf8;
-      overflow-x: auto;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 15px 0;
-    }
-    table, th, td {
-      border: 1px solid #333;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-      background-color: #1f1f1f;
-    }
-    .note {
-      color: #facc15;
-    }
-    hr {
-      border-color: #333;
-    }
-  </style>
-</head>
-<body>
+# 🚨 FuzzCollector v2.1 — XSS & HTML Injection Vulnerability Scanner
+
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.6%2B-blue" />
+  <img src="https://img.shields.io/badge/status-active-success" />
+  <img src="https://img.shields.io/badge/UI-rich-brightgreen" />
+</p>
+
+---
 
   <h1>🚨 FuzzCollector v2.1</h1>
   <p>A Python-based CLI tool to discover <strong>reflected XSS</strong> and <strong>HTML injection</strong> vulnerabilities by fuzzing subdomains and pulling archived endpoints from the Wayback Machine.</p>
