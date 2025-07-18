@@ -1,12 +1,4 @@
-# 🚨 FuzzCollector v2.1 — XSS & HTML Injection Vulnerability Scanner
 
-<p align="center">
-  <img src="https://img.shields.io/badge/python-3.6%2B-blue" />
-  <img src="https://img.shields.io/badge/status-active-success" />
-  <img src="https://img.shields.io/badge/UI-rich-brightgreen" />
-</p>
-
----
 
   <h1>🚨 FuzzCollector v2.1</h1>
   <p>A Python-based CLI tool to discover <strong>reflected XSS</strong> and <strong>HTML injection</strong> vulnerabilities by fuzzing subdomains and pulling archived endpoints from the Wayback Machine.</p>
